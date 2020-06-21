@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
 });
 
 const TransacaoActions = (props) => {
-  console.log(props);
   return (
     <View style={styles.actionsContainer}>
 
