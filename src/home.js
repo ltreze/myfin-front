@@ -1,5 +1,4 @@
 import React from "react";
-import { ScrollView, StyleSheet, ActivityIndicator } from "react-native";
 import Transacoes from "./transacao-list";
 
 class Home extends React.Component {
@@ -12,38 +11,19 @@ class Home extends React.Component {
   }
 
   async getTransacoes() {
-    const res = await fetch("https://localhost:6001/transacao/");
-    const { results } = await res.json();
+    const results = [
+      { valor: 2, descricao: "cafe", data: '2020-01-01'},
+      { valor: 30, descricao: "livro", data: '2020-03-01'},
+      { valor: 10, descricao: "uber", data: '2020-03-04'}];
+
     this.setState({ transacoes: [...results], loading: false });   
   }
 
   render() {
     return (
-      <ScrollView noSpacer={true} noScroll={true} style={styles.container}>
-        {this.state.loading ? (
-          <ActivityIndicator
-            style={[styles.centering]}
-            color="#ff8179"
-            size="large"
-          />
-        ) : (
           <Transacoes transacoes={this.state.transacoes} />
-        )}
-      </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "whitesmoke"
-  },
-  centering: {
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 8,
-    height: "100vh"
-  }
-});
 
 export default Home;
