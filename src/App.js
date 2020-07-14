@@ -1,7 +1,4 @@
-
 import React from 'react';
-import { AppRegistry } from 'react-native';
-
 import Home from './home';
 import Header from './header';
 
@@ -15,7 +12,5 @@ class App extends React.Component {
     );
   }
 }
-
-AppRegistry.registerComponent('App', () => App);
 
 export default App;
