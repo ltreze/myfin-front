@@ -2,9 +2,17 @@ import React from "react";
 import Day from "./day"
 
 const Week = ({ days }) => (
-  <ul>
+  <ul style={{
+    display: "inline-block",
+    overflow: "auto",
+    overflowY: "hidden",
+    maxWidth: "100%",
+    margin: "0 0 1em",
+    whiteSpace: "nowrap"}}>
     {days.map(item => (
-      <li><Day day={item}/></li>
+      <li style={{verticalAlign: "top", display: "inline-block"}}>
+        <Day day={item}/>
+      </li>
     ))}
   </ul>
 );

@@ -6,7 +6,7 @@ function formatDate(day){
 }
 
 const Day = ({ day }) => (
-  <div>
+  <div style={{display: "block", padding: 16}}>
     <h2>{formatDate(day)}</h2>
       <ul>
         {day.cards.map(item => (
