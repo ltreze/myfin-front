@@ -14,7 +14,9 @@ class Home extends React.Component {
     const results = [
       { valor: 2, descricao: "cafe", data: '2020-01-01'},
       { valor: 30, descricao: "livro", data: '2020-03-01'},
-      { valor: 10, descricao: "uber", data: '2020-03-04'}];
+      { valor: 10, descricao: "uber", data: '2020-03-04'},
+      { valor: 50, descricao: "luz", data: '2020-04-04'},
+      { valor: 23, descricao: "netflix", data: '2020-05-04'}];
 
     this.setState({ transacoes: [...results], loading: false });   
   }
