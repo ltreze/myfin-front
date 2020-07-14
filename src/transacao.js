@@ -1,6 +1,6 @@
 import React from "react";
 
-const Transacao = ({ item: transacao }) => {
+const Transacao = ({ transacao }) => {
   return (
     <div id={`${transacao.id}`}>
       <input type="text" defaultValue={`${transacao.descricao}`} />

@@ -1,13 +1,16 @@
 import React from "react";
-import Transacoes from "./transacao-list";
+import Transacoes from "./transacoes";
+import Week from "./week"
 
 class Home extends React.Component {
   state = {
     transacoes: [],
+    days: [],
     loading: true
   };
   componentDidMount() {
     this.getTransacoes();
+    this.getDays();
   }
 
   async getTransacoes() {
@@ -21,10 +24,18 @@ class Home extends React.Component {
     this.setState({ transacoes: [...results], loading: false });   
   }
 
+  async getDays() {
+    const days = [
+      { day: 12, month: 7, year: 2020, cards:[ { description: "pagar conta"} ] },
+      { day: 13, month: 7, year: 2020, cards:[ { description: "ligar para joao"} ] },
+      { day: 14, month: 7, year: 2020, cards:[ { description: "estudar react"} ] }];
+
+    this.setState({ days: [...days], loading: false });   
+  }
+
   render() {
-    return (
-          <Transacoes transacoes={this.state.transacoes} />
-    );
+    //return ( <Transacoes transacoes={this.state.transacoes} /> );
+    return ( <Week days={this.state.days} /> );
   }
 }
 

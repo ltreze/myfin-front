@@ -1,10 +1,10 @@
 import React from "react";
-import TransacaoItem from "./transacao-item";
+import Transacao from "./transacao";
 
 const ComplexList = ({ transacoes }) => (
   <ul>
     {transacoes.map(item => (
-      <TransacaoItem item={item}/>
+      <Transacao transacao={item}/>
     ))}
   </ul>
 );
