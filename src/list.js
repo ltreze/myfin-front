@@ -7,6 +7,16 @@ const daystyle = {
   padding: 16, 
   border: 1, 
   borderColor: "black", 
+  borderStyle: "solid",
+  margin: 4
+}
+
+const liststyle = {
+  verticalAlign: "top", 
+  margin: 4, 
+  padding: 4, 
+  border: 1, 
+  borderColor: "black", 
   borderStyle: "solid"
 }
 
@@ -15,7 +25,7 @@ const List = ({ list }) => (
     <h2>{list.description}</h2>
     <ul>
       {list.cards.map(item => (
-        <li>
+        <li style={liststyle}>
           <Card card={item}/>
         </li>
       ))}

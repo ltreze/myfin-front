@@ -1,5 +1,4 @@
 import React from "react";
-import Transacoes from "./transacoes";
 import Board from "./board"
 
 class Home extends React.Component {
@@ -26,7 +25,7 @@ class Home extends React.Component {
 
   async getLists() {
     const lists = [
-      { description: "bcaa", cards:[ { description: "pagar conta"}, { description: "fazer curso"} ] },
+      { description: "📅 segunda 20", cards:[ { description: "pagar conta"}, { description: "fazer curso"} ] },
       { description: "bcaa", cards:[ { description: "ligar para joao"} ] },
       { description: "bcaa", cards:[ { description: "estudar react"} ] },
       { description: "bcaa", cards:[ { description: "estudar react"} ] },
