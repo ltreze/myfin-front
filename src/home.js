@@ -1,16 +1,16 @@
 import React from "react";
 import Transacoes from "./transacoes";
-import Week from "./week"
+import Board from "./board"
 
 class Home extends React.Component {
   state = {
     transacoes: [],
-    days: [],
+    lists: [],
     loading: true
   };
   componentDidMount() {
     this.getTransacoes();
-    this.getDays();
+    this.getLists();
   }
 
   async getTransacoes() {
@@ -24,23 +24,22 @@ class Home extends React.Component {
     this.setState({ transacoes: [...results], loading: false });   
   }
 
-  async getDays() {
-    const days = [
-      { day: 12, month: 7, year: 2020, cards:[ { description: "pagar conta"}, { description: "fazer curso"} ] },
-      { day: 13, month: 7, year: 2020, cards:[ { description: "ligar para joao"} ] },
-      { day: 14, month: 7, year: 2020, cards:[ { description: "estudar react"} ] },
-      { day: 15, month: 7, year: 2020, cards:[ { description: "estudar react"} ] },
-      { day: 16, month: 7, year: 2020, cards:[ { description: "estudar react"} ] },
-      { day: 17, month: 7, year: 2020, cards:[ { description: "estudar react"} ] },
-      { day: 18, month: 7, year: 2020, cards:[ { description: "estudar react"} ] }
+  async getLists() {
+    const lists = [
+      { description: "bcaa", cards:[ { description: "pagar conta"}, { description: "fazer curso"} ] },
+      { description: "bcaa", cards:[ { description: "ligar para joao"} ] },
+      { description: "bcaa", cards:[ { description: "estudar react"} ] },
+      { description: "bcaa", cards:[ { description: "estudar react"} ] },
+      { description: "bcaa", cards:[ { description: "estudar react"} ] },
+      { description: "bcaa", cards:[ { description: "estudar react"} ] },
+      { description: "bcaa", cards:[ { description: "estudar react"} ] }
     ];
 
-    this.setState({ days: [...days], loading: false });   
+    this.setState({ lists: [...lists], loading: false });   
   }
 
   render() {
-    //return ( <Transacoes transacoes={this.state.transacoes} /> );
-    return ( <Week days={this.state.days} /> );
+    return ( <Board lists={this.state.lists} /> );
   }
 }
 

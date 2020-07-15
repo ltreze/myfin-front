@@ -5,11 +5,16 @@
   "main": "./App.js",
   "dependencies": {
     "@react-navigation/stack": "^5.4.1",
+    "bootstrap": "^4.5.0",
     "expo": "31.0.5",
     "react": "^16.6.3",
     "react-art": "^16.6.3",
+    "react-bootstrap": "^1.2.2",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1"
+  },
+  "resolutions": {
+    "**/**/node-gyp": "5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

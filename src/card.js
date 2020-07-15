@@ -2,9 +2,9 @@ import React from "react";
 
 const Card = ({ card }) => {
   return (
-    <div>
-      <h2>{card.description}</h2>
-    </div>
+    <button>
+      <h3>{card.description}</h3>
+    </button>
   );
 };
 
