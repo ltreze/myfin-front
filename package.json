@@ -1,45 +1,34 @@
 {
-  "name": "random-people",
+  "name": "myfin-front",
   "version": "0.1.0",
   "private": true,
-  "main": "./App.js",
   "dependencies": {
-    "@react-navigation/stack": "^5.4.1",
-    "bootstrap": "^4.5.0",
-    "expo": "31.0.5",
-    "react": "^16.6.3",
-    "react-art": "^16.6.3",
-    "react-bootstrap": "^1.2.2",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
-  },
-  "resolutions": {
-    "**/**/node-gyp": "5.0.0"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start-native": "expo start",
-    "android": "expo android",
-    "ios": "expo ios",
-    "build:ios": "expo build:ios",
-    "build:android": "expo build:android"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "babel-plugin-module-resolver": "^3.1.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx-source": "^6.22.0",
-    "babel-preset-expo": "^5.0.0"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
