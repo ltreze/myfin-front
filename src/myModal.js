@@ -2,12 +2,12 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const MyModal = ({ show, handleClose }) => (
+const MyModal = ({ show, handleClose, title, description }) => (
   <Modal show={show} onHide={handleClose}>
     <Modal.Header closeButton>
-      <Modal.Title>Modal heading</Modal.Title>
+      <Modal.Title>{title}</Modal.Title>
     </Modal.Header>
-    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+    <Modal.Body>{description}</Modal.Body>
     <Modal.Footer>
       <Button variant="secondary" onClick={handleClose}>
         Close

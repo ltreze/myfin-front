@@ -17,7 +17,8 @@ const liststyle = {
   padding: 4, 
   border: 1, 
   borderColor: "black", 
-  borderStyle: "solid"
+  borderStyle: "none",
+  listStyle: "none"
 }
 
 const List = ({ list }) => (
@@ -26,7 +27,7 @@ const List = ({ list }) => (
     <ul>
       {list.cards.map(item => (
         <li style={liststyle}>
-          <Card card={item}/>
+          <Card card={item} />
         </li>
       ))}
     </ul> 

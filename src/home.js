@@ -25,13 +25,32 @@ class Home extends React.Component {
 
   async getLists() {
     const lists = [
-      { description: "📅 segunda 20", cards:[ { description: "pagar conta"}, { description: "fazer curso"} ] },
-      { description: "bcaa", cards:[ { description: "ligar para joao"} ] },
-      { description: "bcaa", cards:[ { description: "estudar react"} ] },
-      { description: "bcaa", cards:[ { description: "estudar react"} ] },
-      { description: "bcaa", cards:[ { description: "estudar react"} ] },
-      { description: "bcaa", cards:[ { description: "estudar react"} ] },
-      { description: "bcaa", cards:[ { description: "estudar react"} ] }
+      { 
+        description: "📅 segunda 20", 
+        cards:[ 
+          { 
+            title: "pagar conta",
+            description: "hoje eu tenho que pagar a conta tal"
+          }, 
+          { title: "fazer curso"} ] },
+      { 
+        description: "bcaa", cards:[ { title: "ligar para joao"} ] 
+      },
+      { 
+        description: "bcaa", cards:[ { title: "estudar react"} ] 
+      },
+      { 
+        description: "bcaa", cards:[ { title: "estudar react"} ] 
+      },
+      { 
+        description: "bcaa", cards:[ { title: "estudar react"} ] 
+      },
+      { 
+        description: "bcaa", cards:[ { title: "estudar react"} ] 
+      },
+      { 
+        description: "bcaa", cards:[ { title: "estudar react"} ] 
+      }
     ];
 
     this.setState({ lists: [...lists], loading: false });   
