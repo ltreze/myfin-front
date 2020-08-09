@@ -30,26 +30,38 @@ class Home extends React.Component {
         cards:[ 
           { 
             title: "pagar conta",
-            description: "hoje eu tenho que pagar a conta tal"
+            description: "hoje eu tenho que pagar a conta tal",
+            dateScheduled: "2020-07-16T08:00"
           }, 
-          { title: "fazer curso"} ] },
-      { 
-        description: "bcaa", cards:[ { title: "ligar para joao"} ] 
+          { 
+            title: "fazer curso",
+            dateScheduled: "2020-07-16T11:00"
+          } 
+        ]
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react"} ] 
+        description: "bcaa", cards:[ { title: "ligar para joao",
+        dateScheduled: "2020-07-16T12:00"} ] 
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react"} ] 
+        description: "bcaa", cards:[ { title: "estudar react",
+        dateScheduled: "2020-07-16T09:00"} ] 
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react"} ] 
+        description: "bcaa", cards:[ { title: "estudar react",
+        dateScheduled: "2020-07-16T09:00"} ] 
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react"} ] 
+        description: "bcaa", cards:[ { title: "estudar react",
+        dateScheduled: "2020-07-16T09:00"} ] 
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react"} ] 
+        description: "bcaa", cards:[ { title: "estudar react",
+        dateScheduled: "2020-07-16T10:00"} ] 
+      },
+      { 
+        description: "bcaa", cards:[ { title: "estudar react",
+        dateScheduled: "2020-07-16T09:00"} ] 
       }
     ];
 

@@ -6,7 +6,7 @@ const boardstyle = {
   overflow: "auto",
   overflowY: "hidden",
   maxWidth: "100%",
-  margin: "0 0 1em",
+  margin: "1",
   whiteSpace: "nowrap"
 }
 
