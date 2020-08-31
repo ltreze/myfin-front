@@ -1,5 +1,5 @@
 import React from "react";
-import List from "./list"
+import Day from "./day"
 
 const weekstyle = {
   display: "inline-block",
@@ -10,12 +10,7 @@ const weekstyle = {
   whiteSpace: "nowrap"
 }
 
-const Week = ({ days }) => (
-  <ul style={weekstyle}>
-    {days.map(item => (
-      <List list={item}/>
-    ))}
-  </ul>
-);
+const Week = ({ days }) => (<ul style={weekstyle}>{days.map(item => (<Day day={item}/>))}</ul>);
+
 
 export default Week;

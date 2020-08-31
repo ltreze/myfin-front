@@ -1,11 +1,11 @@
 import React from "react";
 import Card from "./card";
 
-const List = ({ list }) => (
+const Day = ({ day }) => (
   <li style={daystyle}>
-    <h2 style={descriptionstyle}>{list.description}</h2>
+    <h2 style={descriptionstyle}>{day.description}</h2>
     <ul>
-      {list.cards.map(item => (
+      {day.cards.map(item => (
         <li style={liststyle}>
           <Card card={item} />
         </li>
@@ -35,4 +35,4 @@ const descriptionstyle = {
   padding: 0
 }
 
-export default List;
+export default Day;

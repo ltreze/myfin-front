@@ -7,10 +7,10 @@ class Home extends React.Component {
     loading: true
   };
   componentDidMount() {
-    this.getDays();
+    this.getDaysOfThisWeek();
   }
 
-  async getDays() {
+  async getDaysOfThisWeek() {
     const lists = [
       { 
         description: "dia1", 
