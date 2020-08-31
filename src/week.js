@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Day from "./day"
 
 const weekstyle = {
@@ -10,7 +10,20 @@ const weekstyle = {
   whiteSpace: "nowrap"
 }
 
-const Week = ({ days }) => (<ul style={weekstyle}>{days.map(item => (<Day day={item}/>))}</ul>);
-
+class Week extends Component {
+  render() {
+    return (
+      <ul style={weekstyle}>
+        <Day day={this.props.days[0]} />
+        <Day day={this.props.days[1]} />
+        <Day day={this.props.days[2]} />
+        <Day day={this.props.days[3]} />
+        <Day day={this.props.days[4]} />
+        <Day day={this.props.days[5]} />
+        <Day day={this.props.days[6]} />
+      </ul>
+    );
+  }
+}
 
 export default Week;

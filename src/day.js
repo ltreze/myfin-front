@@ -1,18 +1,22 @@
-import React from "react";
+import React, { Component } from "react";
 import Card from "./card";
 
-const Day = ({ day }) => (
-  <li style={daystyle}>
-    <h2 style={descriptionstyle}>{day.description}</h2>
-    <ul>
-      {day.cards.map(item => (
-        <li style={liststyle}>
-          <Card card={item} />
-        </li>
-      ))}
-    </ul> 
-  </li>
-);
+class Day extends Component {
+  render() {
+    return (
+      <li style={daystyle}>
+        <h2 style={descriptionstyle}>{this.props.day.numberDay}</h2>
+        <ul>
+          {this.props.day.cards.map(item => (
+            <li style={liststyle}>
+              <Card card={item} />
+            </li>
+          ))}
+        </ul>
+      </li>
+    );
+  }
+}
 
 const daystyle = {
   verticalAlign: "top", 

@@ -2,121 +2,103 @@ import React from "react";
 import Week from "./week"
 
 class Home extends React.Component {
-  state = {
-    daysOfThisWeek: [],
-    loading: true
-  };
-  componentDidMount() {
-    this.getDaysOfThisWeek();
-  }
-
-  async getDaysOfThisWeek() {
-    const lists = [
-      { 
-        description: "dia1", 
-        cards:[ 
-          { 
-            title: "pagar conta",
-            description: "hoje eu tenho que pagar a conta tal",
-            dateScheduled: "2020-07-16T08:00"
-          }, 
-          { 
-            title: "fazer curso",
-            dateScheduled: "2020-07-16T11:00"
-          } 
-        ]
-      },
-      { 
-        description: "dia2", 
-        cards:[ 
-          { 
-            title: "pagar conta",
-            description: "hoje eu tenho que pagar a conta tal",
-            dateScheduled: "2020-07-16T08:00"
-          }, 
-          { 
-            title: "fazer curso",
-            dateScheduled: "2020-07-16T11:00"
-          } 
-        ]
-      },
-      { 
-        description: "dia3", 
-        cards:[ 
-          { 
-            title: "pagar conta",
-            description: "hoje eu tenho que pagar a conta tal",
-            dateScheduled: "2020-07-16T08:00"
-          }, 
-          { 
-            title: "fazer curso",
-            dateScheduled: "2020-07-16T11:00"
-          } 
-        ]
-      },
-      { 
-        description: "dia4", 
-        cards:[ 
-          { 
-            title: "pagar conta",
-            description: "hoje eu tenho que pagar a conta tal",
-            dateScheduled: "2020-07-16T08:00"
-          }, 
-          { 
-            title: "fazer curso",
-            dateScheduled: "2020-07-16T11:00"
-          } 
-        ]
-      },
-      { 
-        description: "dia5", 
-        cards:[ 
-          { 
-            title: "pagar conta",
-            description: "hoje eu tenho que pagar a conta tal",
-            dateScheduled: "2020-07-16T08:00"
-          }, 
-          { 
-            title: "fazer curso",
-            dateScheduled: "2020-07-16T11:00"
-          } 
-        ]
-      },
-      { 
-        description: "dia6", 
-        cards:[ 
-          { 
-            title: "pagar conta",
-            description: "hoje eu tenho que pagar a conta tal",
-            dateScheduled: "2020-07-16T08:00"
-          }, 
-          { 
-            title: "fazer curso",
-            dateScheduled: "2020-07-16T11:00"
-          } 
-        ]
-      },
-      { 
-        description: "dia7", 
-        cards:[ 
-          { 
-            title: "pagar conta",
-            description: "hoje eu tenho que pagar a conta tal",
-            dateScheduled: "2020-07-16T08:00"
-          }, 
-          { 
-            title: "fazer curso",
-            dateScheduled: "2020-07-16T11:00"
-          } 
-        ]
-      }      
+  render() {
+    const days = [{
+      numberDay: 1,
+      cards: [{
+        title: "pagar conta",
+        description: "hoje eu tenho que pagar a conta tal",
+        dateScheduled: "2020-07-16T08:00"
+      }, {
+        title: "fazer curso",
+        dateScheduled: "2020-07-16T11:00"
+      }]
+    }, {
+      numberDay: 2,
+      cards: [
+        {
+          title: "pagar conta",
+          description: "hoje eu tenho que pagar a conta tal",
+          dateScheduled: "2020-07-16T08:00"
+        },
+        {
+          title: "fazer curso",
+          dateScheduled: "2020-07-16T11:00"
+        }
+      ]
+    }, {
+      numberDay: 3,
+      cards: [
+        {
+          title: "pagar conta",
+          description: "hoje eu tenho que pagar a conta tal",
+          dateScheduled: "2020-07-16T08:00"
+        },
+        {
+          title: "fazer curso",
+          dateScheduled: "2020-07-16T11:00"
+        }
+      ]
+    }, {
+      numberDay: 4,
+      cards: [
+        {
+          title: "pagar conta",
+          description: "hoje eu tenho que pagar a conta tal",
+          dateScheduled: "2020-07-16T08:00"
+        },
+        {
+          title: "fazer curso",
+          dateScheduled: "2020-07-16T11:00"
+        }
+      ]
+    }, {
+      numberDay: 5,
+      cards: [
+        {
+          title: "pagar conta",
+          description: "hoje eu tenho que pagar a conta tal",
+          dateScheduled: "2020-07-16T08:00"
+        },
+        {
+          title: "fazer curso",
+          dateScheduled: "2020-07-16T11:00"
+        }
+      ]
+    }, {
+      numberDay: 6,
+      cards: [
+        {
+          title: "pagar conta",
+          description: "hoje eu tenho que pagar a conta tal",
+          dateScheduled: "2020-07-16T08:00"
+        },
+        {
+          title: "fazer curso",
+          dateScheduled: "2020-07-16T11:00"
+        }
+      ]
+    }, {
+      numberDay: 7,
+      cards: [
+        {
+          title: "pagar conta",
+          description: "hoje eu tenho que pagar a conta tal",
+          dateScheduled: "2020-07-16T08:00"
+        },
+        {
+          title: "fazer curso",
+          dateScheduled: "2020-07-16T11:00"
+        }
+      ]
+    }
     ];
 
-    this.setState({ daysOfThisWeek: [...lists], loading: false });   
-  }
-
-  render() {
-    return ( <Week days={this.state.daysOfThisWeek} /> );
+    return (
+      <div>
+        <Week days={days} />
+      </div>
+    );
   }
 }
 
