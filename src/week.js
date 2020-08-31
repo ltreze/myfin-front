@@ -1,7 +1,7 @@
 import React from "react";
 import List from "./list"
 
-const boardstyle = {
+const weekstyle = {
   display: "inline-block",
   overflow: "auto",
   overflowY: "hidden",
@@ -10,12 +10,12 @@ const boardstyle = {
   whiteSpace: "nowrap"
 }
 
-const Board = ({ lists }) => (
-  <ul style={boardstyle}>
-    {lists.map(item => (
+const Week = ({ days }) => (
+  <ul style={weekstyle}>
+    {days.map(item => (
       <List list={item}/>
     ))}
   </ul>
 );
 
-export default Board;
+export default Week;

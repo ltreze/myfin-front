@@ -1,32 +1,19 @@
 import React from "react";
-import Board from "./board"
+import Week from "./week"
 
 class Home extends React.Component {
   state = {
-    transacoes: [],
-    lists: [],
+    daysOfThisWeek: [],
     loading: true
   };
   componentDidMount() {
-    this.getTransacoes();
-    this.getLists();
+    this.getDays();
   }
 
-  async getTransacoes() {
-    const results = [
-      { valor: 2, descricao: "cafe", data: '2020-01-01'},
-      { valor: 30, descricao: "livro", data: '2020-03-01'},
-      { valor: 10, descricao: "uber", data: '2020-03-04'},
-      { valor: 50, descricao: "luz", data: '2020-04-04'},
-      { valor: 23, descricao: "netflix", data: '2020-05-04'}];
-
-    this.setState({ transacoes: [...results], loading: false });   
-  }
-
-  async getLists() {
+  async getDays() {
     const lists = [
       { 
-        description: "📅 segunda 20", 
+        description: "dia1", 
         cards:[ 
           { 
             title: "pagar conta",
@@ -40,36 +27,96 @@ class Home extends React.Component {
         ]
       },
       { 
-        description: "bcaa", cards:[ { title: "ligar para joao",
-        dateScheduled: "2020-07-16T12:00"} ] 
+        description: "dia2", 
+        cards:[ 
+          { 
+            title: "pagar conta",
+            description: "hoje eu tenho que pagar a conta tal",
+            dateScheduled: "2020-07-16T08:00"
+          }, 
+          { 
+            title: "fazer curso",
+            dateScheduled: "2020-07-16T11:00"
+          } 
+        ]
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react",
-        dateScheduled: "2020-07-16T09:00"} ] 
+        description: "dia3", 
+        cards:[ 
+          { 
+            title: "pagar conta",
+            description: "hoje eu tenho que pagar a conta tal",
+            dateScheduled: "2020-07-16T08:00"
+          }, 
+          { 
+            title: "fazer curso",
+            dateScheduled: "2020-07-16T11:00"
+          } 
+        ]
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react",
-        dateScheduled: "2020-07-16T09:00"} ] 
+        description: "dia4", 
+        cards:[ 
+          { 
+            title: "pagar conta",
+            description: "hoje eu tenho que pagar a conta tal",
+            dateScheduled: "2020-07-16T08:00"
+          }, 
+          { 
+            title: "fazer curso",
+            dateScheduled: "2020-07-16T11:00"
+          } 
+        ]
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react",
-        dateScheduled: "2020-07-16T09:00"} ] 
+        description: "dia5", 
+        cards:[ 
+          { 
+            title: "pagar conta",
+            description: "hoje eu tenho que pagar a conta tal",
+            dateScheduled: "2020-07-16T08:00"
+          }, 
+          { 
+            title: "fazer curso",
+            dateScheduled: "2020-07-16T11:00"
+          } 
+        ]
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react",
-        dateScheduled: "2020-07-16T10:00"} ] 
+        description: "dia6", 
+        cards:[ 
+          { 
+            title: "pagar conta",
+            description: "hoje eu tenho que pagar a conta tal",
+            dateScheduled: "2020-07-16T08:00"
+          }, 
+          { 
+            title: "fazer curso",
+            dateScheduled: "2020-07-16T11:00"
+          } 
+        ]
       },
       { 
-        description: "bcaa", cards:[ { title: "estudar react",
-        dateScheduled: "2020-07-16T09:00"} ] 
-      }
+        description: "dia7", 
+        cards:[ 
+          { 
+            title: "pagar conta",
+            description: "hoje eu tenho que pagar a conta tal",
+            dateScheduled: "2020-07-16T08:00"
+          }, 
+          { 
+            title: "fazer curso",
+            dateScheduled: "2020-07-16T11:00"
+          } 
+        ]
+      }      
     ];
 
-    this.setState({ lists: [...lists], loading: false });   
+    this.setState({ daysOfThisWeek: [...lists], loading: false });   
   }
 
   render() {
-    return ( <Board lists={this.state.lists} /> );
+    return ( <Week days={this.state.daysOfThisWeek} /> );
   }
 }
 
