@@ -23,7 +23,8 @@ class Home extends Component {
         },
         {
           title: "fazer curso",
-          dateScheduled: "2020-07-16T11:00"
+          description: "fazer aquele curso que ta quase acabando",
+          dateScheduled: "2020-07-02T19:00"
         }
       ]
     }, {

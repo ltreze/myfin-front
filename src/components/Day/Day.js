@@ -8,8 +8,8 @@ class Day extends Component {
       <li className="day">
         <h2 className="description">{this.props.day.numberDay}</h2>
         <ul>
-          {this.props.day.cards.map(item => (
-            <li className="cards">
+          {this.props.day.cards.map((item, index) => (
+            <li className="cards" key={index}>
               <Card card={item} />
             </li>
           ))}

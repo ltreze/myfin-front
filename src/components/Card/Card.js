@@ -1,35 +1,41 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-import MyModal from "../../myModal";
+import MyModal from "../MyModal";
 import "./style.css";
 
-const Card = ({ card }) => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+class Card extends Component {
+  
+  constructor(props){
+    super(props);
+    this.state = {
+      show: false,
+      setShow: false
+    }
+  }
 
-  return (
-    <>
-      <div className="date-schedule">
-        {getHour(card.dateScheduled)}
-        </div>
-      <Button variant="secondary" onClick={handleShow} 
-      className="cardd">
-        <h3 className="title">{card.title}</h3>
-      </Button>
+  handleClose = () => this.setState({ show: false });
+  handleShow = () => this.setState({ show: true });
+  getHour = date => new Date(date).getHours();
+  
+  render() {
+    return (
+      <>
+        <div className="date-schedule">
+          {this.getHour(this.props.card.dateScheduled)}
+          </div>
+        <Button variant="secondary" onClick={this.handleShow} className="cardd">
+          <h3 className="title">{this.props.card.title}</h3>
+        </Button>
 
-      <MyModal
-        show={show}
-        handleClose={handleClose}
-        title={card.title}
-        description={card.description}
-      />
-    </>
-  );
-};
-
-function getHour(date) {
-  return new Date(date).getHours();
+        <MyModal
+          show={this.state.show}
+          handleClose={this.handleClose}
+          title={this.props.card.title}
+          description={this.props.card.description}
+        />
+      </>
+    );
+  }
 }
 
 export default Card;
