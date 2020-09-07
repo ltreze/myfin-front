@@ -1,0 +1,11 @@
+.cardd {
+  height: 70px;
+  width: 160px;
+  margin: 0;
+}
+.title {
+  font-size: 13px;
+}
+.date-schedule {
+  float: left;
+}

@@ -1,0 +1,20 @@
+.day {
+  vertical-align: top; 
+  display: inline-block; 
+  padding: 16px; 
+  border: 1px; 
+  border-color: black; 
+  border-style: solid;
+  margin: 1px;
+}
+.cards {
+  vertical-align: top; 
+  margin: 2px; 
+  padding: 0;
+  list-style: none;
+}
+.description {
+  margin: 0;
+  font-size: 16px;
+  padding: 0;
+}

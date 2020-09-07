@@ -1,7 +1,7 @@
-import React from "react";
-import Week from "./week"
+import React, { Component } from "react";
+import Week from "../Week"
 
-class Home extends React.Component {
+class Home extends Component {
   render() {
     const days = [{
       numberDay: 1,

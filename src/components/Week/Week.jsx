@@ -1,19 +1,11 @@
 import React, { Component } from "react";
-import Day from "./day"
-
-const weekstyle = {
-  display: "inline-block",
-  overflow: "auto",
-  overflowY: "hidden",
-  maxWidth: "100%",
-  margin: "1",
-  whiteSpace: "nowrap"
-}
+import Day from "../Day/Day"
+import "./style.css"
 
 class Week extends Component {
   render() {
     return (
-      <ul style={weekstyle}>
+      <ul className="week">
         <Day day={this.props.days[0]} />
         <Day day={this.props.days[1]} />
         <Day day={this.props.days[2]} />

@@ -1,8 +1,8 @@
-import React from 'react';
-import Home from './home';
+import React, { Component } from 'react';
+import Home from './components/Home';
 import Header from './header';
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
         <div>
