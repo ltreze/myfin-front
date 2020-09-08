@@ -1,0 +1,8 @@
+.week {
+    display: inline-block;
+    overflow: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    margin: 1;
+    white-space: nowrap;
+  }
