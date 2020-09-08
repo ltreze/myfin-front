@@ -6,13 +6,13 @@ class Week extends Component {
   render() {
     return (
       <ul className="week">
-        <Day day={this.props.days[0]} />
-        <Day day={this.props.days[1]} />
-        <Day day={this.props.days[2]} />
-        <Day day={this.props.days[3]} />
-        <Day day={this.props.days[4]} />
-        <Day day={this.props.days[5]} />
-        <Day day={this.props.days[6]} />
+        <Day day={this.props.weekDays[0]} />
+        <Day day={this.props.weekDays[1]} />
+        <Day day={this.props.weekDays[2]} />
+        <Day day={this.props.weekDays[3]} />
+        <Day day={this.props.weekDays[4]} />
+        <Day day={this.props.weekDays[5]} />
+        <Day day={this.props.weekDays[6]} />
       </ul>
     );
   }

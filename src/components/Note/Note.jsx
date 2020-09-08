@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import MyModal from "../MyModal";
 import "./style.css";
 
-class Card extends Component {
+class Note extends Component {
   
   constructor(props){
     super(props);
@@ -21,21 +21,21 @@ class Card extends Component {
     return (
       <>
         <div className="date-schedule">
-          {this.getHour(this.props.card.dateScheduled)}
+          {this.getHour(this.props.noteProps.dateScheduled)}
           </div>
-        <Button variant="secondary" onClick={this.handleShow} className="cardd">
-          <h3 className="title">{this.props.card.title}</h3>
+        <Button variant="secondary" onClick={this.handleShow} className="note">
+          <h3 className="title">{this.props.noteProps.title}</h3>
         </Button>
 
         <MyModal
           show={this.state.show}
           handleClose={this.handleClose}
-          title={this.props.card.title}
-          description={this.props.card.description}
+          title={this.props.noteProps.title}
+          description={this.props.noteProps.description}
         />
       </>
     );
   }
 }
 
-export default Card;
+export default Note;
