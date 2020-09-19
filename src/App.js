@@ -127,7 +127,6 @@ class App extends Component {
       { title: noteTitle, description: "" },
     ];
     const novoEstado = { ...this.state, backlog: novoBacklog };
-    console.log(novoEstado);
     this.setState(novoEstado);
   }
 
