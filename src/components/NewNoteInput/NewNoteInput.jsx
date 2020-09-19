@@ -3,25 +3,35 @@ import "./style.css";
 
 const show = {
   fontSize: "20px",
-  display: "block"
-}
+  display: "block",
+};
 const hide = {
   fontSize: "20px",
-  display: "none"
-}
+  display: "none",
+};
 
 class NewNoteInput extends Component {
-
-  foo(show){
-    console.log('show');
-    console.log(show);
-
-    return { color: "red" }
+  // _blur() {
+  //   if (this.props.show) {
+  //     console.log("perdi o foco")
+  //   }
+  // }
+  _handleEventoInput(e) {
+    if (e.key === "Enter") {
+      let title = e.target.value;
+      this.props.addNoteToBacklog(title);
+    }
   }
-//style={this.foo(this.props.show)} 
   render() {
     return (
-      <input type="text" style={this.props.show ? show : hide} placeholder="text here" />
+      <input
+        type="text"
+        style={this.props.show ? show : hide}
+        placeholder="text here" 
+        // onBlur={this._blur()}
+        onMouseDown={()=>console.log("fui clicado")}
+        onKeyUp={this._handleEventoInput.bind(this)}
+      />
     );
   }
 }

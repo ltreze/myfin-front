@@ -1,7 +1,8 @@
 .note {
-  height: 70px;
+  height: 40px !important;
   width: 160px;
   margin: 0;
+  padding: 0px;
 }
 .title {
   font-size: 13px;

@@ -1,0 +1,10 @@
+.backlog {
+  background-color: #dfdfdf;
+  vertical-align: top; 
+  display: inline-block; 
+  padding: 16px; 
+  border: 1px; 
+  border-color: black; 
+  border-style: solid;
+  margin: 1px;
+}

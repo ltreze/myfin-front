@@ -20,18 +20,15 @@ class Note extends Component {
   render() {
     return (
       <>
-        <div className="date-schedule">
-          {this.getHour(this.props.noteProps.dateScheduled)}
-          </div>
         <Button variant="secondary" onClick={this.handleShow} className="note">
-          <h3 className="title">{this.props.noteProps.title}</h3>
+          <h3 className="title">{this.props.note.title}</h3>
         </Button>
 
         <MyModal
           show={this.state.show}
           handleClose={this.handleClose}
-          title={this.props.noteProps.title}
-          description={this.props.noteProps.description}
+          title={this.props.note.title}
+          description={this.props.note.description}
         />
       </>
     );
