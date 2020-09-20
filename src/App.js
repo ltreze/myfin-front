@@ -17,7 +17,7 @@ class App extends Component {
               dateScheduled: "2020-07-16T08:00",
             },
             {
-              title: "fazer curso",
+              title: "fazer curso FABER CASTELL",
               dateScheduled: "2020-07-16T11:00",
             },
           ],
@@ -36,16 +36,16 @@ class App extends Component {
           numberDay: 3,
           notes: [
             {
-              title: "pagar conta",
+              title: "pagar ENEL",
               description: "hoje eu tenho que pagar a conta tal",
               dateScheduled: "2020-07-16T08:00",
             },
             {
-              title: "fazer curso",
+              title: "fazer curso JAVA",
               dateScheduled: "2020-07-16T11:00",
             },
             {
-              title: "fazer curso",
+              title: "fazer curso REACT",
               dateScheduled: "2020-07-16T11:00",
             },
           ],
@@ -59,7 +59,7 @@ class App extends Component {
               dateScheduled: "2020-07-16T08:00",
             },
             {
-              title: "fazer curso",
+              title: "fazer curso DESENHO",
               dateScheduled: "2020-07-16T11:00",
             },
           ],
@@ -73,7 +73,7 @@ class App extends Component {
               dateScheduled: "2020-07-16T08:00",
             },
             {
-              title: "fazer curso",
+              title: "fazer curso COBOL",
               dateScheduled: "2020-07-16T11:00",
             },
           ],
@@ -87,7 +87,7 @@ class App extends Component {
               dateScheduled: "2020-07-16T08:00",
             },
             {
-              title: "fazer curso",
+              title: "fazer curso FGV",
               dateScheduled: "2020-07-16T11:00",
             },
           ],
@@ -101,7 +101,7 @@ class App extends Component {
               dateScheduled: "2020-07-16T08:00",
             },
             {
-              title: "fazer curso",
+              title: "fazer curso DESIGN PATTERNS",
               dateScheduled: "2020-07-16T11:00",
             },
           ],
@@ -114,7 +114,7 @@ class App extends Component {
           dateScheduled: "2020-07-16T08:00",
         },
         {
-          title: "fazer curso",
+          title: "fazer curso PENTEST",
           description: "fazer curso tal",
           dateScheduled: "2020-07-16T11:00",
         },

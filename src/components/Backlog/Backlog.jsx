@@ -28,7 +28,7 @@ class Backlog extends Component {
     });
   }
 
-  _hide(){
+  _hide() {
     this.setState({
       showNewNoteInput: false,
     });
@@ -36,21 +36,23 @@ class Backlog extends Component {
 
   render() {
     return (
-      <li className="backlog">
+      <li id={this.props.id} className="backlog">
         <h2 className="description">Backlog</h2>
-        <button 
-          style={this.state.showNewNoteInput ? hide : show} 
-          className="header_coisa" 
-          onClick={this._addNote.bind(this)}>Add</button>
-        <NewNoteInput 
-          show={this.state.showNewNoteInput} 
+        <button
+          style={this.state.showNewNoteInput ? hide : show}
+          className="header_coisa"
+          onClick={this._addNote.bind(this)}
+        >
+          Add
+        </button>
+        <NewNoteInput
+          show={this.state.showNewNoteInput}
           addNoteToBacklog={this.props.addNoteToBacklog.bind(this)}
-          hide={this._hide.bind(this)} />
-        <ul>
+          hide={this._hide.bind(this)}
+        />
+        <ul id="NOTAS_DO_BACKLOG">
           {this.props.backlog.map((item, index) => (
-            <li className="notes" key={index}>
-              <Note note={item} />
-            </li>
+              <Note note={item} key={index} />            
           ))}
         </ul>
       </li>
