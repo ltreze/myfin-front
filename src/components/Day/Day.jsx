@@ -7,7 +7,11 @@ class Day extends Component {
     e.preventDefault();
     const data = e.dataTransfer.getData("text");
     const element = document.getElementById(data);
-    e.currentTarget.appendChild(element);
+    if (e.currentTarget.id.startsWith('lista-de-notas')) {
+      e.currentTarget.appendChild(element);
+    } else if (e.currentTarget.id.startsWith('dia')){
+      e.currentTarget.children[1].appendChild(element);
+    }
   }
 
   onDragOver(e){
@@ -16,10 +20,16 @@ class Day extends Component {
 
   render() {
     return (
-      <li className="day">
+      <li 
+        className="day"
+        id={"dia_" + this.props.id}
+        onDrop={this.onDrop}
+        onDragOver={this.onDragOver}
+      >
         <h2 className="description">{this.props.day.numberDay}</h2>
-        <ul
-          id={this.props.id}
+        <ul 
+          className="ul_notas"
+          id={"lista-de-notas-"+this.props.id}
           onDrop={this.onDrop}
           onDragOver={this.onDragOver}
         >
