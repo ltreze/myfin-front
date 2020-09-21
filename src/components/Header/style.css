@@ -12,3 +12,7 @@
   flex-direction: row;
   min-height: 50px;
 }
+
+.header_coisa {
+  float: left;
+}
