@@ -17,7 +17,18 @@ class Backlog extends Component {
     super(props);
     this.state = {
       showNewNoteInput: false,
+      notas: []
     };
+    this._novasNotas = this._novasNotas.bind(this)
+  }
+
+  componentDidMount(){
+    this.props.notas.inscrever(this._novasNotas)
+  }
+
+  _novasNotas(notas){
+    console.log(notas)
+    this.setState({...this.state, notas})
   }
 
   _addNote(event) {
@@ -35,6 +46,7 @@ class Backlog extends Component {
   }
 
   render() {
+    this.state.notas.forEach((e)=>{console.log(e.title)})
     return (
       <li id={this.props.id} className="backlog">
         <h2 className="description">Backlog</h2>
@@ -47,12 +59,12 @@ class Backlog extends Component {
         </button>
         <NewNoteInput
           show={this.state.showNewNoteInput}
-          addNoteToBacklog={this.props.addNoteToBacklog.bind(this)}
+          criarNota={this.props.criarNota}
           hide={this._hide.bind(this)}
         />
         <ul id="NOTAS_DO_BACKLOG">
-          {this.props.backlog.map((item, index) => (
-              <Note note={item} key={index} />            
+          {this.state.notas.map((item, index) => (
+            <Note note={item} key={index} />            
           ))}
         </ul>
       </li>

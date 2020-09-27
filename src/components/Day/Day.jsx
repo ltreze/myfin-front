@@ -29,11 +29,11 @@ class Day extends Component {
         <h2 className="description">{this.props.day.numberDay}</h2>
         <ul 
           className="ul_notas"
-          id={"lista-de-notas-"+this.props.id}
+          id={"lista-de-notas-" + this.props.id}
           onDrop={this.onDrop}
           onDragOver={this.onDragOver}
         >
-          {this.props.day.notes.map((item, index) => (
+          {this.props.notes.map((item, index) => (
             <Note note={item} key={index} id={index} idParent={this.props.id}/>
           ))}
         </ul>

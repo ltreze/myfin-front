@@ -21,6 +21,7 @@ class Note extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <li
         id={"SOURCE_"+this.props.id+this.props.idParent}
@@ -35,7 +36,7 @@ class Note extends Component {
             onClick={this.handleShow}
             className="note"
           >
-            <h3 className="title">{this.props.note.title}</h3>
+            <h3 className="title">{this.props.note.title }</h3>
           </Button>
 
           <MyModal
