@@ -21,7 +21,7 @@ class Note extends Component {
   }
 
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <li
         id={"SOURCE_"+this.props.id+this.props.idParent}

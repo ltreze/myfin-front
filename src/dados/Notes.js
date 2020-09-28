@@ -1,14 +1,20 @@
-export default class ArrayDeNotas {
+export default class Notes {
   constructor() {
     this.itens = [
       {
-        title: "pagar contax",
-        description: "hoje eu tenho que pagar a conta tal",
+        title: "desenho Pri",
+        description: "tenho que fazer aquele desenho prometido",
         weekDay: "dom",
         numberDay: 1,
       },
       {
-        title: "fazer cursoy",
+        title: "manutencao academia",
+        description: "ir ate SBC",
+        weekDay: "dom",
+        numberDay: 1,
+      },
+      {
+        title: "fazer curso",
         description: "fazer aquele curso xyz",
         weekDay: "seg",
         numberDay: 2,
@@ -17,7 +23,7 @@ export default class ArrayDeNotas {
     this._inscritos = []
   }
 
-  criarNota(title) {
+  addNote(title) {
     // console.log('********************')
     // console.log(title)
     // console.log(this.notas)

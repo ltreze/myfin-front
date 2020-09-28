@@ -40,7 +40,6 @@ class NewNoteInput extends Component {
   _add(e){
     e.preventDefault();
     e.stopPropagation();
-    console.log(' NewNoteInput esta chamando criarNota  ')
     this.props.criarNota(e.target.value);
     e.target.value = ''
     this.props.hide()
@@ -48,6 +47,7 @@ class NewNoteInput extends Component {
 
 
   render() {
+    //console.log(this.props)
     return (
       <input
         ref={this.myRef}
