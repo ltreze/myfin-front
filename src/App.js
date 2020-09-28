@@ -14,7 +14,7 @@ class App extends Component {
 
   render() {
     //console.log(this.backlogNotes)
-    console.log(this.notes)
+    //console.log(this.notes)
     return (
       <>
         <Header title="my-fin react" />
@@ -23,7 +23,6 @@ class App extends Component {
           addNoteProp={this.backlogNotes.addNote.bind(this.backlogNotes)}
         /> 
         <Week
-          //criarNota={this.notas.criarNota}
           notesProp={this.notes}
         />
       </>

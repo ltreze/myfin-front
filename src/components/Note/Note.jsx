@@ -17,20 +17,21 @@ class Note extends Component {
   getHour = (date) => new Date(date).getHours();
 
   onDragStart(e) {
+    console.log('comecou a arrastar: ' + e.target.id)
     e.dataTransfer.setData("text", e.target.id);
   }
 
   render() {
     //console.log(this.props)
     return (
-      <li
-        id={"SOURCE_"+this.props.id+this.props.idParent}
+      <li //list item encapsulate a note
+        id={this.props.id}
         className="notes"
         key={this.props.index}
         onDragStart={this.onDragStart}
         draggable="true"
       >
-        <div>
+        <div aria-label="note">
           <Button
             variant="secondary"
             onClick={this.handleShow}

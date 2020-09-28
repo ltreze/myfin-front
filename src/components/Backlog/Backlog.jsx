@@ -27,6 +27,7 @@ class Backlog extends Component {
   }
 
   componentDidMount(){
+    this._novasNotas(this.props.backlogNotesProp.itens)
     this.props.backlogNotesProp.inscrever(this._novasNotas)
   }
 
@@ -52,8 +53,7 @@ class Backlog extends Component {
         <button
           style={this.state.showNewNoteInput ? hide : show}
           className="header_coisa"
-          onClick={this._addNote.bind(this)}
-        >
+          onClick={this._addNote.bind(this)}>
           Add
         </button>
         <NewNoteInput
@@ -62,8 +62,8 @@ class Backlog extends Component {
           hide={this._hide.bind(this)}
         />
         <ul id="NOTAS_DO_BACKLOG">
-          {this.state.backlogNotes.map((item, index) => (
-            <Note note={item} key={index} />            
+          {this.state.backlogNotes.map((item) => (
+            <Note note={item} key={item.id} id={item.id} />
           ))}
         </ul>
       </li>

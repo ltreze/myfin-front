@@ -2,13 +2,15 @@ export default class BacklogNotes {
   constructor() {
     this.itens = [
       {
-        title: "pagar contax",
+        id: 111,
+        title: "pagar conta111",
         description: "hoje eu tenho que pagar a conta tal",
         weekDay: "dom",
         numberDay: 1,
       },
       {
-        title: "fazer cursoy",
+        id: 222,
+        title: "fazer curso222",
         description: "fazer aquele curso xyz",
         weekDay: "seg",
         numberDay: 2,

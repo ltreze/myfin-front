@@ -2,19 +2,22 @@ export default class Notes {
   constructor() {
     this.itens = [
       {
-        title: "desenho Pri",
+        id: 77,
+        title: "desenho Pri77",
         description: "tenho que fazer aquele desenho prometido",
         weekDay: "dom",
         numberDay: 1,
       },
       {
-        title: "manutencao academia",
+        id: 99,
+        title: "manutencao academia99",
         description: "ir ate SBC",
         weekDay: "dom",
         numberDay: 1,
       },
       {
-        title: "fazer curso",
+        id: 55,
+        title: "fazer curso55",
         description: "fazer aquele curso xyz",
         weekDay: "seg",
         numberDay: 2,
