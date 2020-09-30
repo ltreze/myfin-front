@@ -4,6 +4,7 @@ import Header from "./components/Header/";
 import BacklogNotes from "./dados/BacklogNotes";
 import Backlog from "./components/Backlog";
 import Notes from "./dados/Notes";
+import "./App.css";
 
 class App extends Component {
   constructor(){
@@ -18,13 +19,12 @@ class App extends Component {
     return (
       <>
         <Header title="my-fin react" />
-        <Backlog id={"backlog"}
-          backlogNotesProp={this.backlogNotes} 
-          addNoteProp={this.backlogNotes.addNote.bind(this.backlogNotes)}
-        /> 
-        <Week
-          notesProp={this.notes}
-        />
+        <div id="wrapper" className="wrapper">
+          <Backlog id={"backlog"}
+            backlogNotesProp={this.backlogNotes} 
+            addNoteProp={this.backlogNotes.addNote.bind(this.backlogNotes)} /> 
+          <Week notesProp={this.notes} />
+        </div>
       </>
     );
   }

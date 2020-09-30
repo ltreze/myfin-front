@@ -17,18 +17,18 @@ class Backlog extends Component {
     super(props);
     this.state = {
       showNewNoteInput: false,
-      backlogNotes: []
+      backlogNotes: [],
     };
-    this._novasNotas = this._novasNotas.bind(this)
+    this._novasNotas = this._novasNotas.bind(this);
   }
 
-  _novasNotas(backlogNotes){
-    this.setState({...this.state, backlogNotes})
+  _novasNotas(backlogNotes) {
+    this.setState({ ...this.state, backlogNotes });
   }
 
-  componentDidMount(){
-    this._novasNotas(this.props.backlogNotesProp.itens)
-    this.props.backlogNotesProp.inscrever(this._novasNotas)
+  componentDidMount() {
+    this._novasNotas(this.props.backlogNotesProp.itens);
+    this.props.backlogNotesProp.inscrever(this._novasNotas);
   }
 
   _addNote(event) {
@@ -50,22 +50,27 @@ class Backlog extends Component {
     return (
       <li id={this.props.id} className="backlog">
         <h2 className="description">Backlog</h2>
-        <button
-          style={this.state.showNewNoteInput ? hide : show}
-          className="header_coisa"
-          onClick={this._addNote.bind(this)}>
-          Add
-        </button>
-        <NewNoteInput
-          show={this.state.showNewNoteInput}
-          criarNota={this.props.addNoteProp}
-          hide={this._hide.bind(this)}
-        />
-        <ul id="NOTAS_DO_BACKLOG">
-          {this.state.backlogNotes.map((item) => (
-            <Note note={item} key={item.id} id={item.id} />
-          ))}
-        </ul>
+        <div className="backlog_botoes">
+          <button
+            style={this.state.showNewNoteInput ? hide : show}
+            className="header_coisa"
+            onClick={this._addNote.bind(this)}
+          >
+            Add
+          </button>
+          <NewNoteInput
+            show={this.state.showNewNoteInput}
+            criarNota={this.props.addNoteProp}
+            hide={this._hide.bind(this)}
+          />
+        </div>
+        <div>
+          <ul id="NOTAS_DO_BACKLOG">
+            {this.state.backlogNotes.map((item) => (
+              <Note note={item} key={item.id} id={item.id} />
+            ))}
+          </ul>
+        </div>
       </li>
     );
   }

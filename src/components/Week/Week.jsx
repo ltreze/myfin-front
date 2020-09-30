@@ -28,16 +28,16 @@ class Week extends Component {
   }
 
   render() {
-    //console.log(this.state.notes.filter((x)=>{ return x.weekDay === 'dom'; }))
+    console.log(this.state.notes.filter(x => x.weekDay === 'dom'))
     return (
       <ul className="week">
-        <Day dayProp={this.state.notes.filter((x)=>{ return x.weekDay === 'dom'; })} id={'dom'} />
-        <Day dayProp={this.state.notes.filter((x)=>{ return x.weekDay === 'seg'; })} id={'seg'} />
-        <Day dayProp={this.state.notes.filter((x)=>{ return x.weekDay === 'ter'; })} id={'ter'} />
-        <Day dayProp={this.state.notes.filter((x)=>{ return x.weekDay === 'qua'; })} id={'qua'} />
-        <Day dayProp={this.state.notes.filter((x)=>{ return x.weekDay === 'qui'; })} id={'qui'} />
-        <Day dayProp={this.state.notes.filter((x)=>{ return x.weekDay === 'sex'; })} id={'sex'} />
-        <Day dayProp={this.state.notes.filter((x)=>{ return x.weekDay === 'sab'; })} id={'sab'} />
+        <Day dayProp={this.state.notes.filter(x => x.weekDay === 'dom')} idProp={'dom'} />
+        <Day dayProp={this.state.notes.filter(x => x.weekDay === 'seg')} idProp={'seg'} />
+        <Day dayProp={this.state.notes.filter(x => x.weekDay === 'ter')} idProp={'ter'} />
+        <Day dayProp={this.state.notes.filter(x => x.weekDay === 'qua')} idProp={'qua'} />
+        <Day dayProp={this.state.notes.filter(x => x.weekDay === 'qui')} idProp={'qui'} />
+        <Day dayProp={this.state.notes.filter(x => x.weekDay === 'sex')} idProp={'sex'} />
+        <Day dayProp={this.state.notes.filter(x => x.weekDay === 'sab')} idProp={'sab'} />
       </ul>
     );
   }
