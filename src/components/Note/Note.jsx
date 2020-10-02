@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-import MyModal from "../MyModal";
+import MyModal from "../MyModal/MyModal";
 import "./style.css";
 
 class Note extends Component {
@@ -19,6 +19,22 @@ class Note extends Component {
   onDragStart(e) {
     console.log('comecou a arrastar: ' + e.target.id)
     e.dataTransfer.setData("text", e.target.id);
+  }
+
+  handleChange(e){
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('this')
+    console.log(this)
+    
+    const novoValor = e.target.value;
+    console.log(novoValor)
+
+    const t = e.target;
+    console.log(t)
+
+    this.setPoints(novoValor)
   }
 
   render() {
@@ -43,8 +59,12 @@ class Note extends Component {
           <MyModal
             show={this.state.show}
             handleClose={this.handleClose}
-            title={this.props.note.title}
-            description={this.props.note.description}
+            handleChange={this.handleChange}
+
+            note={this.props.note}
+            // title={this.props.note.title}
+            // description={this.props.note.description}
+            // points={this.props.note.points}
           />
         </div>
       </li>

@@ -1,20 +1,22 @@
 export default class BacklogNotes {
   constructor() {
+    const nota111 = new Nota("pagar conta111");
+    nota111.id = 111
+    nota111.description = "hoje eu tenho que pagar a conta tal"
+    nota111.weekDay = "dom"
+    nota111.numberDay = 1
+    nota111.points = 3
+
+    const nota222 = new Nota("fazer curso222");
+    nota222.id = 222
+    nota222.description = "fazer aquele curso xyz"
+    nota222.weekDay = "seg"
+    nota222.numberDay = 2
+    nota222.points = 13
+
     this.itens = [
-      {
-        id: 111,
-        title: "pagar conta111",
-        description: "hoje eu tenho que pagar a conta tal",
-        weekDay: "dom",
-        numberDay: 1,
-      },
-      {
-        id: 222,
-        title: "fazer curso222",
-        description: "fazer aquele curso xyz",
-        weekDay: "seg",
-        numberDay: 2,
-      },
+      nota111,
+      nota222,
     ];
     this._inscritos = []
   }
@@ -51,5 +53,9 @@ class Nota {
   constructor(title) {
     this.title = title;
     this.id = Math.floor(Math.random() * 1000) + 1
+  }
+
+  setPoints(points){
+    this.points = points
   }
 }
