@@ -34,6 +34,13 @@ class Note extends Component {
     this.setDescription(novoValor)
   }
 
+  handleChangeTitle(e){
+    e.preventDefault();
+    e.stopPropagation();
+    const novoValor = e.target.value;
+    this.setTitle(novoValor)
+  }
+
   render() {
     //console.log(this.props)
     return (
@@ -58,6 +65,7 @@ class Note extends Component {
             handleClose={this.handleClose}
             handleChangePoints={this.handleChangePoints}
             handleChangeDescription={this.handleChangeDescription}
+            handleChangeTitle={this.handleChangeTitle}
 
             note={this.props.note}
           />

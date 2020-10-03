@@ -6,13 +6,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./style.css";
 
-const MyModal = ({ show, handleClose, handleChangePoints, handleChangeDescription, note }) => (
+const MyModal = ({ show, handleClose, handleChangePoints, handleChangeDescription, handleChangeTitle, note }) => (
   <Modal show={show} onHide={handleClose}>
     <Modal.Header closeButton>
-      <Modal.Title>{note.title}</Modal.Title>
+      <Modal.Title>
+        <input type="text" defaultValue={note.title} onChange={handleChangeTitle.bind(note)} />
+      </Modal.Title>
     </Modal.Header>
-    {/* <Modal.Body>{description}</Modal.Body>
-     */}
      <Container>
           <Row>
             <Col xs={12} md={12}>
@@ -22,17 +22,6 @@ const MyModal = ({ show, handleClose, handleChangePoints, handleChangeDescriptio
               <input type="text" defaultValue={note.points} onChange={handleChangePoints.bind(note)} />
             </Col>
           </Row>
-          {/* <Row>
-            <Col xs={6} md={4}>
-              .col-xs-6 .col-md-4
-            </Col>
-            <Col xs={6} md={4}>
-              .col-xs-6 .col-md-4
-            </Col>
-            <Col xs={6} md={4}>
-              .col-xs-6 .col-md-4
-            </Col>
-          </Row> */}
         </Container>
     <Modal.Footer>
       <Button variant="secondary" onClick={handleClose}>

@@ -18,6 +18,12 @@ class Note {
 
   setDescription(description){
     this.description = description
+    this.dao.update(this)
+  }
+
+  setTitle(title){
+    this.title = title
+    this.dao.update(this)
   }
 }
 
