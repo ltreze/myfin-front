@@ -57,5 +57,13 @@ export default class Notes {
 class Nota {
   constructor(title) {
     this.title = title;
+    this.backlog = false;
+  }
+
+  setPoints(points){
+    this.points = points
+    console.log( 'setpoint do notes')
+    //const db = localStorage.get("db")
+    //localStorage.set("db", this)
   }
 }
