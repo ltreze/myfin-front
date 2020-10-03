@@ -19,22 +19,16 @@ class Day extends Component {
   }
 
   render() {
+    //console.log(this.props.dayProp)
     return (
-      <li 
-        className="day"
-        id={"dia_" + this.props.id}
-        onDrop={this.onDrop}
-        onDragOver={this.onDragOver}
-      >
-        <h2 className="description">{this.props.day.numberDay}</h2>
-        <ul 
-          className="ul_notas"
-          id={"lista-de-notas-"+this.props.id}
-          onDrop={this.onDrop}
-          onDragOver={this.onDragOver}
-        >
-          {this.props.day.notes.map((item, index) => (
-            <Note note={item} key={index} id={index} idParent={this.props.id}/>
+      <li className="day" id={"dia_" + this.props.id} onDrop={this.onDrop} onDragOver={this.onDragOver} >
+        <h2 className="description">
+          {this.props.idProp}{this.props.dayProp.numberDay}
+        </h2>
+        <ul className="ul_notas" id={"lista-de-notas-" + this.props.id} onDrop={this.onDrop} onDragOver={this.onDragOver} >
+          {this.props.dayProp.map((item) => (
+            <Note note={item} key={item.id} id={item.id} idParent={this.props.id}
+            />
           ))}
         </ul>
       </li>

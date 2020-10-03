@@ -1,0 +1,18 @@
+.header_h3 {
+  font-size: 19px;
+  font-weight: 600px;
+  text-align: left;
+  color: white;
+  background-color: #ff8179;
+  border-bottom-color: #ff4e3f;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  align-items: center;
+  flex-direction: row;
+  min-height: 50px;
+}
+
+.header_coisa {
+  float: left;
+}

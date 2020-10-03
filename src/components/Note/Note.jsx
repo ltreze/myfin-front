@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-import MyModal from "../MyModal";
+import MyModal from "../MyModal/MyModal";
 import "./style.css";
 
 class Note extends Component {
@@ -17,32 +17,54 @@ class Note extends Component {
   getHour = (date) => new Date(date).getHours();
 
   onDragStart(e) {
+    console.log('comecou a arrastar: ' + e.target.id)
     e.dataTransfer.setData("text", e.target.id);
   }
 
+  handleChange(e){
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('this')
+    console.log(this)
+    
+    const novoValor = e.target.value;
+    console.log(novoValor)
+
+    const t = e.target;
+    console.log(t)
+
+    this.setPoints(novoValor)
+  }
+
   render() {
+    //console.log(this.props)
     return (
-      <li
-        id={"SOURCE_"+this.props.id+this.props.idParent}
+      <li //list item encapsulate a note
+        id={this.props.id}
         className="notes"
         key={this.props.index}
         onDragStart={this.onDragStart}
         draggable="true"
       >
-        <div>
+        <div aria-label="note">
           <Button
             variant="secondary"
             onClick={this.handleShow}
             className="note"
           >
-            <h3 className="title">{this.props.note.title}</h3>
+            <h3 className="title">{this.props.note.title }</h3>
           </Button>
 
           <MyModal
             show={this.state.show}
             handleClose={this.handleClose}
-            title={this.props.note.title}
-            description={this.props.note.description}
+            handleChange={this.handleChange}
+
+            note={this.props.note}
+            // title={this.props.note.title}
+            // description={this.props.note.description}
+            // points={this.props.note.points}
           />
         </div>
       </li>

@@ -31,19 +31,23 @@ class NewNoteInput extends Component {
     }
   }
 
-  _add(e){
-    this.props.addNoteToBacklog(e.target.value);
-    e.target.value = ''
-    this.props.hide()
-  }
-
   _handleEventoInput(e) {
     if (e.key === "Enter") {
       this._add(e)
     }
   }
 
+  _add(e){
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.criarNota(e.target.value);
+    e.target.value = ''
+    this.props.hide()
+  }
+
+
   render() {
+    //console.log(this.props)
     return (
       <input
         ref={this.myRef}

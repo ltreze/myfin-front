@@ -9,3 +9,7 @@
   margin: 1px;
   width: 230px;
 }
+
+.backlog_botoes {
+  display: flex;
+}
