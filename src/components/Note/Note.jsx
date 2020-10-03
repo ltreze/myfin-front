@@ -50,7 +50,7 @@ class Note extends Component {
             onClick={this.handleShow}
             className="note"
           >
-            <h3 className="title">{this.props.note.title }</h3>
+            <h3 className="title">{this.props.note.title} - {this.props.note.points}</h3>
           </Button>
 
           <MyModal
