@@ -28,7 +28,7 @@ class Week extends Component {
   }
 
   render() {
-    console.log(this.state.notes.filter(x => x.weekDay === 'dom'))
+    //console.log(this.state.notes.filter(x => x.weekDay === 'dom'))
     return (
       <ul className="week">
         <Day dayProp={this.state.notes.filter(x => x.weekDay === 'dom')} idProp={'dom'} />

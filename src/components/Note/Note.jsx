@@ -17,24 +17,21 @@ class Note extends Component {
   getHour = (date) => new Date(date).getHours();
 
   onDragStart(e) {
-    console.log('comecou a arrastar: ' + e.target.id)
     e.dataTransfer.setData("text", e.target.id);
   }
 
-  handleChange(e){
+  handleChangePoints(e){
     e.preventDefault();
     e.stopPropagation();
-    
-    console.log('this')
-    console.log(this)
-    
     const novoValor = e.target.value;
-    console.log(novoValor)
-
-    const t = e.target;
-    console.log(t)
-
     this.setPoints(novoValor)
+  }
+
+  handleChangeDescription(e){
+    e.preventDefault();
+    e.stopPropagation();
+    const novoValor = e.target.value;
+    this.setDescription(novoValor)
   }
 
   render() {
@@ -59,12 +56,10 @@ class Note extends Component {
           <MyModal
             show={this.state.show}
             handleClose={this.handleClose}
-            handleChange={this.handleChange}
+            handleChangePoints={this.handleChangePoints}
+            handleChangeDescription={this.handleChangeDescription}
 
             note={this.props.note}
-            // title={this.props.note.title}
-            // description={this.props.note.description}
-            // points={this.props.note.points}
           />
         </div>
       </li>
