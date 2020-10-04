@@ -1,10 +1,11 @@
 class Note {
-  constructor(title, description, points, isBacklog, id, /*dao*/) {
+  constructor(title, description, points, isBacklog, id, weekDay) {
     this.title = title ?? ""
     this.id = id ?? Math.floor(Math.random() * 10000) + 1
     this.description = description ?? ""
     this.points = points ?? 0
     this.isBacklog = isBacklog ?? true
+    this.weekDay = weekDay ?? ""
   }
 
   setDao(dao){

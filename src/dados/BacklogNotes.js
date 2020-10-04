@@ -5,7 +5,9 @@ export default class BacklogNotes {
   constructor() {
     this.notesDao = new NotesDao();
 
-    this.itens = this.notesDao.getAll(); // TODO: filtrar por backlog
+    this.itens = this.notesDao.getAll().filter(x => x.isBacklog)
+
+    
     this._inscritos = [];
   }
 

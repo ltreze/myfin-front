@@ -12,8 +12,10 @@ class NotesDao {
         x.description,
         x.points,
         x.isBacklog,
-        x.id
+        x.id,
+        x.weekDay
       );
+      //console.log(note)
       note.setDao(this);
       notesParse.push(note);
     });

@@ -3,15 +3,6 @@ import Note from "../Note";
 import NewNoteInput from "../NewNoteInput";
 import "./style.css";
 
-const show = {
-  fontSize: "20px",
-  display: "block",
-};
-const hide = {
-  fontSize: "20px",
-  display: "none",
-};
-
 class Backlog extends Component {
   constructor(props) {
     super(props);
@@ -19,16 +10,16 @@ class Backlog extends Component {
       showNewNoteInput: false,
       backlogNotes: [],
     };
-    this._novasNotas = this._novasNotas.bind(this);
+    this._newNotes = this._newNotes.bind(this);
   }
 
-  _novasNotas(backlogNotes) {
+  _newNotes(backlogNotes) {
     this.setState({ ...this.state, backlogNotes });
   }
 
   componentDidMount() {
-    this._novasNotas(this.props.backlogNotesProp.itens);
-    this.props.backlogNotesProp.inscrever(this._novasNotas);
+    this._newNotes(this.props.backlogNotesProp.itens);
+    this.props.backlogNotesProp.inscrever(this._newNotes);
   }
 
   _addNote(event) {
@@ -77,3 +68,12 @@ class Backlog extends Component {
 }
 
 export default Backlog;
+
+const show = {
+  fontSize: "20px",
+  display: "block",
+};
+const hide = {
+  fontSize: "20px",
+  display: "none",
+};

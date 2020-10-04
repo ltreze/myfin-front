@@ -1,37 +1,20 @@
+import NotesDao from "./NotesDao"
+import Note from "./Note"
+
 export default class Notes {
   constructor() {
-    this.itens = [
-      {
-        id: 77,
-        title: "desenho Pri77",
-        description: "tenho que fazer aquele desenho prometido",
-        weekDay: "dom",
-        numberDay: 1,
-      },
-      {
-        id: 99,
-        title: "manutencao academia99",
-        description: "ir ate SBC",
-        weekDay: "dom",
-        numberDay: 1,
-      },
-      {
-        id: 55,
-        title: "fazer curso55",
-        description: "fazer aquele curso xyz",
-        weekDay: "seg",
-        numberDay: 2,
-      },
-    ];
+    this.notesDao = new NotesDao();
+    
+    this.itens = this.notesDao.getAll().filter(x => x.isBacklog === false)
+    console.log('=================== this.itens')
+    console.log(this.itens)
     this._inscritos = []
   }
 
   addNote(title) {
-    // console.log('********************')
-    // console.log(title)
-    // console.log(this.notas)
-    const novaNota = new Nota(title);
-    this.itens.push(novaNota);
+    const newNote = new Note(title);
+    this.itens.push(newNote);
+    this.notesDao.create(newNote);
     this.notificar()
   }
 
@@ -51,19 +34,5 @@ export default class Notes {
       this._inscritos.forEach(func => { 
           func(this.itens)
       })
-  }
-}
-
-class Nota {
-  constructor(title) {
-    this.title = title;
-    this.backlog = false;
-  }
-
-  setPoints(points){
-    this.points = points
-    console.log( 'setpoint do notes')
-    //const db = localStorage.get("db")
-    //localStorage.set("db", this)
   }
 }
