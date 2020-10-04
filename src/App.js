@@ -14,8 +14,8 @@ class App extends Component {
   }
 
   _tellAppThatNoteWasAddedToThisDay(noteId, weekDay){
-    console.log(noteId)
-    console.log(this.backlogNotes.itens)
+    //console.log(noteId)
+    //console.log(this.backlogNotes.itens)
     this.backlogNotes.itens.forEach((note) => {
       if (note.id == noteId) {
         //console.log('app JSnote');

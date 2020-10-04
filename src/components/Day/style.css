@@ -15,10 +15,11 @@
   padding: 0;
   list-style: none;
 }
-.description {
+.day_description {
   margin: 0;
   font-size: 16px;
   padding: 0;
+  background-color: red;
 }
 .ul_notas{
   padding: 10px;
