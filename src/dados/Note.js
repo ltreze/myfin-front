@@ -26,6 +26,16 @@ class Note {
     this.title = title
     this.dao.update(this)
   }
+
+  setIsBacklog(isBacklog){
+    this.isBacklog = isBacklog
+    this.dao.update(this)
+  }
+
+  setWeekDay(weekDay){
+    this.weekDay = weekDay
+    this.dao.update(this)
+  }
 }
 
 export default Note;

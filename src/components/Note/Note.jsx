@@ -18,6 +18,7 @@ class Note extends Component {
 
   onDragStart(e) {
     e.dataTransfer.setData("text", e.target.id);
+    console.log('_______________ comecou a arrastar')
   }
 
   handleChangePoints(e){

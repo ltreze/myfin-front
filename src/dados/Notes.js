@@ -6,8 +6,8 @@ export default class Notes {
     this.notesDao = new NotesDao();
     
     this.itens = this.notesDao.getAll().filter(x => x.isBacklog === false)
-    console.log('=================== this.itens')
-    console.log(this.itens)
+    //console.log('=================== this.itens')
+    //console.log(this.itens)
     this._inscritos = []
   }
 

@@ -3,31 +3,48 @@ import Note from "../Note";
 import "./style.css";
 
 class Day extends Component {
+
+  constructor(){
+    super()
+    this.state = { notes: [] }
+    this._novasNotas = this._novasNotas.bind(this)
+    this.onDrop = this.onDrop.bind(this)
+  }
+
+  _novasNotas(notes){
+    this.setState({...this.state, notes})
+  }
+
   onDrop(e) {
     e.preventDefault();
-    const data = e.dataTransfer.getData("text");
-    const element = document.getElementById(data);
+    e.stopPropagation();
+    const noteId = e.dataTransfer.getData("text");
+
+    const noteElement = document.getElementById(noteId);
+
     if (e.currentTarget.id.startsWith('lista-de-notas')) {
-      e.currentTarget.appendChild(element);
+      e.currentTarget.appendChild(noteElement);
     } else if (e.currentTarget.id.startsWith('dia')){
-      e.currentTarget.children[1].appendChild(element);
+      e.currentTarget.children[1].appendChild(noteElement);
     }
+    this.props.tellWeekNoteWasAddedToThisDay(noteId, this.props.weekDay)
   }
 
   onDragOver(e){
     e.preventDefault();
+    e.stopPropagation();
   }
 
   render() {
-    //console.log(this.props.dayProp)
+    //console.log(this.props.notesProp)
     return (
-      <li className="day" id={"dia_" + this.props.id} onDrop={this.onDrop} onDragOver={this.onDragOver} >
+      <li className="day" onDrop={this.onDrop} onDragOver={this.onDragOver} >
         <h2 className="description">
-          {this.props.idProp}{this.props.dayProp.numberDay}
+          {this.props.weekDay} - {this.props.notesOfThisDay.numberDay}
         </h2>
-        <ul className="ul_notas" id={"lista-de-notas-" + this.props.id} onDrop={this.onDrop} onDragOver={this.onDragOver} >
-          {this.props.dayProp.map((item) => (
-            <Note note={item} key={item.id} id={item.id} idParent={this.props.id}
+        <ul className="ul_notas" id={"lista-de-notas-" + this.props.weekDay} onDrop={this.onDrop} onDragOver={this.onDragOver} >
+          {this.props.notesOfThisDay.map((item) => (
+            <Note note={item} key={item.id} id={item.id} idParent={this.props.id} 
             />
           ))}
         </ul>
