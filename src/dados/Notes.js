@@ -13,6 +13,7 @@ export default class Notes {
 
   addNote(title) {
     const newNote = new Note(title);
+    newNote.setDao(this.notesDao)
     this.itens.push(newNote);
     this.notesDao.create(newNote);
     this.notificar()

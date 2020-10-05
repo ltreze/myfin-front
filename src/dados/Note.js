@@ -29,6 +29,10 @@ class Note {
 
   setIsBacklog(isBacklog){
     this.isBacklog = isBacklog
+
+    console.log('this.dao')
+    console.log(this.dao)
+    
     this.dao.update(this)
   }
 

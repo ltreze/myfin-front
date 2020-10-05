@@ -24,8 +24,8 @@ class NotesDao {
   }
 
   create(note) {
+    console.log("create do NotesDao");
     let allNotes = this.getAll();
-    //console.log("allNotes---1");
     //console.log(allNotes);
     allNotes.push(note);
     //console.log("allNotes---2");

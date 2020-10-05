@@ -12,7 +12,11 @@ export default class BacklogNotes {
   }
 
   addNote(title) {
+    console.log('chamou addNote do BacklogNotes.js')
     const newNote = new Note(title);
+    console.log(newNote)
+    newNote.setDao(this.notesDao);
+    console.log(newNote)
     this.itens.push(newNote);
     this.notesDao.create(newNote);
     this.notificar();
