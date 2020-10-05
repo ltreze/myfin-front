@@ -13,13 +13,24 @@ export default class BacklogNotes {
 
   addNote(title) {
     console.log('chamou addNote do BacklogNotes.js')
+    
     const newNote = new Note(title);
     console.log(newNote)
+    
     newNote.setDao(this.notesDao);
     console.log(newNote)
+    
     this.itens.push(newNote);
     this.notesDao.create(newNote);
     this.notificar();
+  }
+
+  putOnBacklog(noteId){
+    console.log('update noteId')
+    console.log(noteId)
+    let note = this.notesDao.getById(noteId)
+    note.isBacklog = true;
+    this.notesDao.update(note)
   }
 
   apagarNota(indice) {

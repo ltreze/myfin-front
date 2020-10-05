@@ -11,6 +11,8 @@ class Backlog extends Component {
       backlogNotes: [],
     };
     this._newNotes = this._newNotes.bind(this);
+    this._tellBacklogThatNoteWasAddedToIt = this._tellBacklogThatNoteWasAddedToIt.bind(this);
+    this._onDrop = this._onDrop.bind(this)
   }
 
   _newNotes(backlogNotes) {
@@ -36,11 +38,61 @@ class Backlog extends Component {
     });
   }
 
+  _tellBacklogThatNoteWasAddedToIt(noteId){
+    
+    console.log('this.props.backlogNotesProp');
+    console.log(this.props.backlogNotesProp)
+    this.props.backlogNotesProp.putOnBacklog(noteId)
+    // this.state.backlogNotes.forEach((note) => {
+    //   if (note.id == noteId) {
+    //     //console.log('app JSnote');
+    //     //console.log(note);
+    //     note.setIsBacklog(false)
+    //     note.setWeekDay(weekDay)
+    //   }
+    // })
+  }
+
+  _onDrop(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const noteId = e.dataTransfer.getData("text");
+    const noteElement = document.getElementById(noteId);
+
+    if (e.currentTarget.id.startsWith('NOTAS_DO_BACKLOG')) {
+      e.currentTarget.appendChild(noteElement);
+    } else if (e.currentTarget.id.startsWith('backlog')){
+      e.currentTarget.children[1].appendChild(noteElement);
+    } else if (e.currentTarget.id.startsWith('h2-')){
+      console.log('soltou em cima do h2')
+      console.log(e.currentTarget)
+      e.currentTarget.parentElement.children[1].appendChild(noteElement)
+    }
+    console.log('noteId')
+    console.log(noteId)
+    this._tellBacklogThatNoteWasAddedToIt(noteId)
+  }
+
+  onDragOver(e){
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
   render() {
     //console.log(this.props)
     return (
-      <li id={this.props.id} className="backlog">
-        <h2 className="description">Backlog</h2>
+      <li 
+        className="backlog"
+        id="backlog"
+        onDrop={this._onDrop}
+        onDragOver={this.onDragOver} >
+        <h2 
+          className="description"
+          id={"h2-"}
+          onDrop={this._onDrop}
+          onDragOver={this.onDragOver}>
+          Backlog
+        </h2>
         <div className="backlog_botoes">
           <button
             style={this.state.showNewNoteInput ? hide : show}
@@ -56,7 +108,10 @@ class Backlog extends Component {
           />
         </div>
         <div>
-          <ul id="NOTAS_DO_BACKLOG">
+          <ul 
+            id="NOTAS_DO_BACKLOG"
+            onDrop={this.onDrop}
+            onDragOver={this.onDragOver}>
             {this.state.backlogNotes.map((item) => (
               <Note note={item} key={item.id} id={item.id} />
             ))}
