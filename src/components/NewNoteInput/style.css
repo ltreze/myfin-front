@@ -9,3 +9,10 @@
 .date-schedule {
   float: left;
 }
+.newnoteinput_input {
+  height: 40px !important;
+  width: 160px;
+  margin: 0;
+  padding: 0px;
+  font-size: 13px;
+}

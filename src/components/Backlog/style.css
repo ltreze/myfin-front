@@ -13,3 +13,45 @@
 .backlog_botoes {
   display: flex;
 }
+
+.backlog_newnoteinput {    
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+  width: 160px;
+  margin: 0;
+
+  height: 40px !important;
+  
+  text-transform: none;
+
+  overflow: visible;
+
+  font-family: inherit;
+
+  box-sizing: border-box;
+
+}
+
+.backlog_fakenote {
+  height: 40px !important;
+  color: #4f4f4f !important;
+  background-color: #dfdfdf !important;
+  border-color: #dedede !important;
+  width: 160px;
+  margin: 0;
+  padding: 0px;
+}

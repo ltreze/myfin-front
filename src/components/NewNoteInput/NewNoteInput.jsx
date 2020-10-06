@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import "./style.css";
 
 const show = {
-  fontSize: "20px",
   display: "block",
 };
 const hide = {
-  fontSize: "20px",
-  display: "none",
+    display: "none",
 };
 
 class NewNoteInput extends Component {
@@ -56,6 +54,7 @@ class NewNoteInput extends Component {
         placeholder="text here" 
         onBlur={this._blur.bind(this)}
         onKeyUp={this._handleEventoInput.bind(this)}
+        className="newnoteinput_input"
       />
     );
   }

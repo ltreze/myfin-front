@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Note from "../Note";
 import NewNoteInput from "../NewNoteInput";
 import "./style.css";
+import Button from "react-bootstrap/Button";
 
 class Backlog extends Component {
   constructor(props) {
@@ -11,8 +12,10 @@ class Backlog extends Component {
       backlogNotes: [],
     };
     this._newNotes = this._newNotes.bind(this);
-    this._tellBacklogThatNoteWasAddedToIt = this._tellBacklogThatNoteWasAddedToIt.bind(this);
-    this._onDrop = this._onDrop.bind(this)
+    this._tellBacklogThatNoteWasAddedToIt = this._tellBacklogThatNoteWasAddedToIt.bind(
+      this
+    );
+    this._onDrop = this._onDrop.bind(this);
   }
 
   _newNotes(backlogNotes) {
@@ -38,11 +41,10 @@ class Backlog extends Component {
     });
   }
 
-  _tellBacklogThatNoteWasAddedToIt(noteId){
-    
-    console.log('this.props.backlogNotesProp');
-    console.log(this.props.backlogNotesProp)
-    this.props.backlogNotesProp.putOnBacklog(noteId)
+  _tellBacklogThatNoteWasAddedToIt(noteId) {
+    console.log("this.props.backlogNotesProp");
+    console.log(this.props.backlogNotesProp);
+    this.props.backlogNotesProp.putOnBacklog(noteId);
     // this.state.backlogNotes.forEach((note) => {
     //   if (note.id == noteId) {
     //     //console.log('app JSnote');
@@ -59,21 +61,21 @@ class Backlog extends Component {
     const noteId = e.dataTransfer.getData("text");
     const noteElement = document.getElementById(noteId);
 
-    if (e.currentTarget.id.startsWith('NOTAS_DO_BACKLOG')) {
+    if (e.currentTarget.id.startsWith("NOTAS_DO_BACKLOG")) {
       e.currentTarget.appendChild(noteElement);
-    } else if (e.currentTarget.id.startsWith('backlog')){
+    } else if (e.currentTarget.id.startsWith("backlog")) {
       e.currentTarget.children[1].appendChild(noteElement);
-    } else if (e.currentTarget.id.startsWith('h2-')){
-      console.log('soltou em cima do h2')
-      console.log(e.currentTarget)
-      e.currentTarget.parentElement.children[1].appendChild(noteElement)
+    } else if (e.currentTarget.id.startsWith("h2-")) {
+      console.log("soltou em cima do h2");
+      console.log(e.currentTarget);
+      e.currentTarget.parentElement.children[1].appendChild(noteElement);
     }
-    console.log('noteId')
-    console.log(noteId)
-    this._tellBacklogThatNoteWasAddedToIt(noteId)
+    console.log("noteId");
+    console.log(noteId);
+    this._tellBacklogThatNoteWasAddedToIt(noteId);
   }
 
-  onDragOver(e){
+  onDragOver(e) {
     e.preventDefault();
     e.stopPropagation();
   }
@@ -81,37 +83,40 @@ class Backlog extends Component {
   render() {
     //console.log(this.props)
     return (
-      <li 
+      <li
         className="backlog"
         id="backlog"
         onDrop={this._onDrop}
-        onDragOver={this.onDragOver} >
-        <h2 
+        onDragOver={this.onDragOver}
+      >
+        <h2
           className="description"
           id={"h2-"}
           onDrop={this._onDrop}
-          onDragOver={this.onDragOver}>
+          onDragOver={this.onDragOver}
+        >
           Backlog
         </h2>
-        <div className="backlog_botoes">
-          <button
-            style={this.state.showNewNoteInput ? hide : show}
-            className="header_coisa"
-            onClick={this._addNote.bind(this)}
-          >
-            Add
-          </button>
-          <NewNoteInput
-            show={this.state.showNewNoteInput}
-            criarNota={this.props.addNoteProp}
-            hide={this._hide.bind(this)}
-          />
-        </div>
+
         <div>
-          <ul 
+          <ul
             id="NOTAS_DO_BACKLOG"
             onDrop={this.onDrop}
-            onDragOver={this.onDragOver}>
+            onDragOver={this.onDragOver}
+          >
+            <Button
+              style={this.state.showNewNoteInput ? hide : show}
+              // className="backlog_newnoteinput"
+              className="backlog_fakenote"
+              onClick={this._addNote.bind(this)}
+            >
+              + Add Note
+            </Button>
+            <NewNoteInput
+              show={this.state.showNewNoteInput}
+              criarNota={this.props.addNoteProp}
+              hide={this._hide.bind(this)}
+            />
             {this.state.backlogNotes.map((item) => (
               <Note note={item} key={item.id} id={item.id} />
             ))}
@@ -125,10 +130,8 @@ class Backlog extends Component {
 export default Backlog;
 
 const show = {
-  fontSize: "20px",
-  display: "block",
+  display: "inline-block",
 };
 const hide = {
-  fontSize: "20px",
   display: "none",
 };
