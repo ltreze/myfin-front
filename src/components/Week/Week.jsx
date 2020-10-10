@@ -24,37 +24,24 @@ class Week extends Component {
   }
 
   componentDidMount(){
-    //console.log('********** WEEK componentDidMount()');
-    //console.log(new Date().toISOString().replace('Z','').replace('T',' '))
-    //console.log('this.props.notesProp');
     this._newNotes(this.props.notesProp.itens);
     this.props.notesProp.inscrever(this._newNotes);
   }
 
   _tellWeekNoteWasAddedToThisDay(noteId, weekDay){
-    const noteIdNumber = Number(noteId)
 
     this.props.notesProp.itens.forEach((note) => {
-      if (note.id === noteIdNumber) {
+      if (note.id === noteId) {
         //console.log('a nota que vc esta mudando esta em algum dia da semana ja')
         note.setWeekDay(weekDay)
       }
     })
 
-    this.props.tellAppThatNoteWasAddedToThisDay(noteIdNumber, weekDay)
-    // console.log('tellWeekNoteAddToThisDay ' + noteId + ' ' + weekDay )
-    // console.log(this.props.notesProp)
-    //this.props.notesProp.addNote()
+    this.props.tellAppThatNoteWasAddedToThisDay(noteId, weekDay)
 
-    //this.state.notes.
   }
 
   render() {
-    //console.log('********** WEEK render()')
-    //console.log(new Date().toISOString().replace('Z','').replace('T',' '))
-    //console.log(this.state.notes.filter(x => x.weekDay === 'dom'))
-    //console.log(this.state.notes)
-
     const sun = this.state.notes.filter(x => x.weekDay === 'dom')
     const mon = this.state.notes.filter(x => x.weekDay === 'seg')
     const tue = this.state.notes.filter(x => x.weekDay === 'ter')
@@ -62,9 +49,6 @@ class Week extends Component {
     const thu = this.state.notes.filter(x => x.weekDay === 'qui')
     const fri = this.state.notes.filter(x => x.weekDay === 'sex')
     const sat = this.state.notes.filter(x => x.weekDay === 'sab')
-
-    //console.log('dom')
-    //console.log(dom)
 
     return (
       <ul className="week">

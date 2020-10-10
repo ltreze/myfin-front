@@ -23,7 +23,7 @@ class Day extends Component {
     e.preventDefault();
     e.stopPropagation();
 
-    const noteId = e.dataTransfer.getData("text");
+    const noteId = Number(e.dataTransfer.getData("text"));
     const noteElement = document.getElementById(noteId);
 
     if (e.currentTarget.id.startsWith('ul-lista-de-notas')) {
