@@ -12,13 +12,15 @@ class Note extends Component {
     };
   }
 
+  componentDidMount() {
+  }
+
   handleClose = () => this.setState({ show: false });
   handleShow = () => this.setState({ show: true });
   getHour = (date) => new Date(date).getHours();
 
   onDragStart(e) {
     e.dataTransfer.setData("text", e.target.id);
-    console.log('_______________ comecou a arrastar')
   }
 
   handleChangePoints(e){

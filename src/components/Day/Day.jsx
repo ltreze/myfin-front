@@ -6,18 +6,23 @@ class Day extends Component {
 
   constructor(){
     super()
-    this.state = { notes: [] }
-    this._novasNotas = this._novasNotas.bind(this)
+    this.state = { day: {} }
     this.onDrop = this.onDrop.bind(this)
   }
 
-  _novasNotas(notes){
-    this.setState({...this.state, notes})
+  componentDidUpdate() {
+    this._mudouNota = this._mudouNota.bind(this)
+    this.props.notesOfThisDay.map(x => x.inscrever(this._mudouNota))
+  }
+  
+  _mudouNota(day){
+    this.setState({ ...this.state, day})
   }
 
   onDrop(e) {
     e.preventDefault();
     e.stopPropagation();
+
     const noteId = e.dataTransfer.getData("text");
     const noteElement = document.getElementById(noteId);
 
@@ -39,7 +44,6 @@ class Day extends Component {
   }
 
   render() {
-    //console.log(this.props.notesProp)
     return (
       <li 
         className="day" 
@@ -51,7 +55,7 @@ class Day extends Component {
           id={"h2-" + this.props.weekDay}
           onDrop={this.onDrop} 
           onDragOver={this.onDragOver}>
-          {this.props.weekDay} - {this.props.notesOfThisDay.numberDay}
+          {this.props.weekDay} - {this.props.notesOfThisDay.reduce((sum, n) => sum + Number(n.points), 0)}
         </h2>
         <ul 
           className="ul_notas" 

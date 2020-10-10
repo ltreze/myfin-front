@@ -26,8 +26,6 @@ export default class BacklogNotes {
   }
 
   putOnBacklog(noteId){
-    console.log('update noteId')
-    console.log(noteId)
     let note = this.notesDao.getById(noteId)
     note.isBacklog = true;
     this.notesDao.update(note)

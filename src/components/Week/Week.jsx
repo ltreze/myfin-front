@@ -32,16 +32,16 @@ class Week extends Component {
   }
 
   _tellWeekNoteWasAddedToThisDay(noteId, weekDay){
+    const noteIdNumber = Number(noteId)
 
     this.props.notesProp.itens.forEach((note) => {
-      //console.log(note);
-      if (note.id == noteId) {
+      if (note.id === noteIdNumber) {
         //console.log('a nota que vc esta mudando esta em algum dia da semana ja')
         note.setWeekDay(weekDay)
       }
     })
 
-    this.props.tellAppThatNoteWasAddedToThisDay(noteId, weekDay)
+    this.props.tellAppThatNoteWasAddedToThisDay(noteIdNumber, weekDay)
     // console.log('tellWeekNoteAddToThisDay ' + noteId + ' ' + weekDay )
     // console.log(this.props.notesProp)
     //this.props.notesProp.addNote()

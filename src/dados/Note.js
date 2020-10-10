@@ -6,6 +6,8 @@ class Note {
     this.points = points ?? 0
     this.isBacklog = isBacklog ?? true
     this.weekDay = weekDay ?? ""
+
+    this._inscritos = [];
   }
 
   setDao(dao){
@@ -15,6 +17,7 @@ class Note {
   setPoints(points){
     this.points = points
     this.dao.update(this)
+    this.notify()
   }
 
   setDescription(description){
@@ -39,6 +42,16 @@ class Note {
   setWeekDay(weekDay){
     this.weekDay = weekDay
     this.dao.update(this)
+  }
+
+  inscrever(func) {
+    this._inscritos.push(func);
+  }
+
+  notify(){
+    this._inscritos.forEach((func) => {
+      func(this.itens);
+    });
   }
 }
 

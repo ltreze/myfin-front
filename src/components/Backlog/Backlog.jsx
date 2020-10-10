@@ -12,9 +12,7 @@ class Backlog extends Component {
       backlogNotes: [],
     };
     this._newNotes = this._newNotes.bind(this);
-    this._tellBacklogThatNoteWasAddedToIt = this._tellBacklogThatNoteWasAddedToIt.bind(
-      this
-    );
+    this._tellBacklogThatNoteWasAddedToIt = this._tellBacklogThatNoteWasAddedToIt.bind(this);
     this._onDrop = this._onDrop.bind(this);
   }
 
@@ -42,23 +40,13 @@ class Backlog extends Component {
   }
 
   _tellBacklogThatNoteWasAddedToIt(noteId) {
-    console.log("this.props.backlogNotesProp");
-    console.log(this.props.backlogNotesProp);
     this.props.backlogNotesProp.putOnBacklog(noteId);
-    // this.state.backlogNotes.forEach((note) => {
-    //   if (note.id == noteId) {
-    //     //console.log('app JSnote');
-    //     //console.log(note);
-    //     note.setIsBacklog(false)
-    //     note.setWeekDay(weekDay)
-    //   }
-    // })
   }
 
   _onDrop(e) {
     e.preventDefault();
     e.stopPropagation();
-    const noteId = e.dataTransfer.getData("text");
+    const noteId = Number(e.dataTransfer.getData("text"));
     const noteElement = document.getElementById(noteId);
 
     if (e.currentTarget.id.startsWith("NOTAS_DO_BACKLOG")) {
@@ -66,12 +54,8 @@ class Backlog extends Component {
     } else if (e.currentTarget.id.startsWith("backlog")) {
       e.currentTarget.children[1].appendChild(noteElement);
     } else if (e.currentTarget.id.startsWith("h2-")) {
-      console.log("soltou em cima do h2");
-      console.log(e.currentTarget);
       e.currentTarget.parentElement.children[1].appendChild(noteElement);
     }
-    console.log("noteId");
-    console.log(noteId);
     this._tellBacklogThatNoteWasAddedToIt(noteId);
   }
 
@@ -81,7 +65,6 @@ class Backlog extends Component {
   }
 
   render() {
-    //console.log(this.props)
     return (
       <li
         className="backlog"
@@ -106,7 +89,6 @@ class Backlog extends Component {
           >
             <Button
               style={this.state.showNewNoteInput ? hide : show}
-              // className="backlog_newnoteinput"
               className="backlog_fakenote"
               onClick={this._addNote.bind(this)}
             >
