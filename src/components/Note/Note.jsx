@@ -45,9 +45,8 @@ class Note extends Component {
   }
 
   render() {
-    //console.log(this.props)
     return (
-      <li //list item encapsulate a note
+      <li 
         id={this.props.id}
         className="notes"
         key={this.props.index}

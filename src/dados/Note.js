@@ -50,7 +50,7 @@ class Note {
 
   notify(){
     this._inscritos.forEach((func) => {
-      func(this.itens);
+      func(this);
     });
   }
 }

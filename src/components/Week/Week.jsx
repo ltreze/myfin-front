@@ -5,21 +5,15 @@ import "./style.css";
 
 class Week extends Component {
   constructor(props){
-    //console.log('********** WEEK constructor() - BEGIN');
-    //console.log(new Date().toISOString().replace('Z','').replace('T',' '))
     super(props);
     this.state = {
 
       notes: []
     };
     this._newNotes = this._newNotes.bind(this)
-    //console.log('********** WEEK constructor() - END');
-    //console.log(new Date().toISOString().replace('Z','').replace('T',' '))
   }
 
   _newNotes(notes){
-    //console.log('********** WEEK _newNotes()');
-    //console.log(new Date().toISOString().replace('Z','').replace('T',' '))
     this.setState({ ...this.state, notes })
   }
 
@@ -28,17 +22,16 @@ class Week extends Component {
     this.props.notesProp.inscrever(this._newNotes);
   }
 
-  _tellWeekNoteWasAddedToThisDay(noteId, weekDay){
+  _tellWeekNoteWasAddedToThisDay(noteId, newWeekDay, updateSumPointsDay){
 
     this.props.notesProp.itens.forEach((note) => {
       if (note.id === noteId) {
-        //console.log('a nota que vc esta mudando esta em algum dia da semana ja')
-        note.setWeekDay(weekDay)
+        note.setWeekDay(newWeekDay)
+        updateSumPointsDay(newWeekDay, noteId)
       }
     })
 
-    this.props.tellAppThatNoteWasAddedToThisDay(noteId, weekDay)
-
+    this.props.tellAppThatNoteWasAddedToThisDay(noteId, newWeekDay)
   }
 
   render() {

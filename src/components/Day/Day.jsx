@@ -31,11 +31,16 @@ class Day extends Component {
     } else if (e.currentTarget.id.startsWith('dia')){
       e.currentTarget.children[1].appendChild(noteElement);
     } else if (e.currentTarget.id.startsWith('h2-')){
-      console.log('soltou em cima do h2')
-      console.log(e.currentTarget)
       e.currentTarget.parentElement.children[1].appendChild(noteElement)
     }
-    this.props.tellWeekNoteWasAddedToThisDay(noteId, this.props.weekDay)
+
+    this.props.tellWeekNoteWasAddedToThisDay(noteId, this.props.weekDay, this.updateSumPointsDay.bind(this))
+  }
+
+  updateSumPointsDay(newWeekDay, noteId){
+    console.log('updateSumPointsDay chamado')
+    console.log(newWeekDay)
+    console.log(noteId)
   }
 
   onDragOver(e){
