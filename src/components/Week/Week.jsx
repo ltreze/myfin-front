@@ -6,11 +6,9 @@ import "./style.css";
 class Week extends Component {
   constructor(props){
     super(props);
-    this.state = {
-
-      notes: []
-    };
+    this.state = { notes: [] };
     this._newNotes = this._newNotes.bind(this)
+
   }
 
   _newNotes(notes){
@@ -23,19 +21,19 @@ class Week extends Component {
   }
 
   _tellWeekNoteWasAddedToThisDay(noteId, newWeekDay, updateSumPointsDay){
-
     this.props.notesProp.itens.forEach((note) => {
       if (note.id === noteId) {
         note.setWeekDay(newWeekDay)
         updateSumPointsDay(newWeekDay, noteId)
       }
     })
-
     this.props.tellAppThatNoteWasAddedToThisDay(noteId, newWeekDay)
   }
 
   render() {
     const sun = this.state.notes.filter(x => x.weekDay === 'dom')
+    console.log(this.state)
+    console.log(sun)
     const mon = this.state.notes.filter(x => x.weekDay === 'seg')
     const tue = this.state.notes.filter(x => x.weekDay === 'ter')
     const wed = this.state.notes.filter(x => x.weekDay === 'qua')
@@ -47,7 +45,7 @@ class Week extends Component {
       <ul className="week">
         <Day 
           notesOfThisDay={sun} 
-          weekDay={'dom'} 
+          weekDay={'dome'} 
           tellWeekNoteWasAddedToThisDay={this._tellWeekNoteWasAddedToThisDay.bind(this)} />
 
         <Day 

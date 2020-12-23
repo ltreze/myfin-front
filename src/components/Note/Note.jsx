@@ -8,11 +8,9 @@ class Note extends Component {
     super(props);
     this.state = {
       show: false,
-      setShow: false,
-    };
-  }
-
-  componentDidMount() {
+      setShow: false
+    }
+    this.onDragStart = this.onDragStart.bind(this)
   }
 
   handleClose = () => this.setState({ show: false });
@@ -20,7 +18,8 @@ class Note extends Component {
   getHour = (date) => new Date(date).getHours();
 
   onDragStart(e) {
-    e.dataTransfer.setData("text", e.target.id);
+    e.dataTransfer.setData("id", e.target.id);
+    e.dataTransfer.setData("points", this.props.note.points);
   }
 
   handleChangePoints(e){

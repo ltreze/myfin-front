@@ -15,7 +15,6 @@ class NotesDao {
         x.id,
         x.weekDay
       );
-      //console.log(note)
       note.setDao(this);
       notesParse.push(note);
     });
